@@ -45,6 +45,7 @@ func main()  {
 
 		if from == "" || to == "" {
 			cli.ShowAppHelp(c)
+			return
 		}
 
 		fmt.Println(color.GreenString("[INFO]"), "start update import ", from, " to ", to)
