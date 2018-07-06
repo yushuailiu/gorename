@@ -1,0 +1,10 @@
+hash: 22603a4732c958c00658819a40685cff2be7856b7a80d06adc102bb89025f96c
+updated: 2018-07-06T15:32:44.239459+08:00
+imports:
+- name: github.com/fatih/color
+  version: 5b77d2a35fb0ede96d138fc9a99f5c9b6aef11b4
+- name: github.com/urfave/cli
+  version: cfb38830724cc34fedffe9a2a29fb54fa9169cd1
+- name: golang.org/x/tools
+  version: 16f8f9bb720111f0b7b5c750acc28768620bb0c7
+testImports: []
