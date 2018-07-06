@@ -112,8 +112,14 @@ func ProcessFile(filePath string, from string, to string) *cli.ExitError {
 
 				replacePackage := strings.Replace(importString, from , to, -1)
 
-				astutil.DeleteImport(fSet, file, importString)
-				astutil.AddImport(fSet, file, replacePackage)
+
+				if mImport.Name != nil && len(mImport.Name.Name) > 0 {
+					astutil.DeleteNamedImport(fSet, file, mImport.Name.Name, importString)
+					astutil.AddNamedImport(fSet, file, mImport.Name.Name, replacePackage)
+				} else {
+					astutil.DeleteImport(fSet, file, importString)
+					astutil.AddImport(fSet, file, replacePackage)
+				}
 			}
 			
 		}
