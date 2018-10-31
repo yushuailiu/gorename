@@ -92,7 +92,7 @@ func ProcessDir(dir string, from string, to string, c *cli.Context) *cli.ExitErr
 func ProcessFile(filePath string, from string, to string) *cli.ExitError {
 	fSet := token.NewFileSet()
 
-	file, err := parser.ParseFile(fSet, filePath, nil, 0)
+	file, err := parser.ParseFile(fSet, filePath, nil, parser.ParseComments)
 
 	if err != nil {
 		fmt.Println(err)
